@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Apple",
+        "description": "macbook_pro",
+        "price": 100,
+        "sales_price": 120,
+        "features": [
+            "FullHD",
+            "business",
+            "black"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Lenovo",
+        "description": "thinkpad",
+        "price": 100,
+        "sales_price": 110,
+        "features": [
+            "HD",
+            "business",
+            "silver"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "HP",
+        "description": "Omen",
+        "price": 90,
+        "sales_price": 100,
+        "features": [
+            "4K",
+            "gaming",
+            "white"
+        ]
+    }
+]
