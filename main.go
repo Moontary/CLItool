@@ -82,14 +82,14 @@ func ReadProducts(l []Laptop) {
 		case 2:
 			changeIndex(&i, -1, len(l))
 		case 3:
-			EditProduct()
+			EditProduct(&l[i])
 		case 4:
 			return
 		}
 	}
 }
 
-// changeIndex changes
+// changeIndex iterates index for items in ReadProducts
 func changeIndex(i *int, n int, length int) {
 	*i += n
 	if *i == length {
@@ -100,8 +100,29 @@ func changeIndex(i *int, n int, length int) {
 }
 
 // EditProduct edits one product in json
-func EditProduct() {
-	fmt.Println("Edit product works")
+func EditProduct(l *Laptop) {
+	for {
+		var option int
+		fmt.Printf("Product:\nID_%d\nName: %s\nDescription: %s\nPrice: %d\nSalesPrice: %d\nFeatures: %v\n", l.ID, l.Name, l.Description, l.Price, l.SalesPrice, l.Features)
+		fmt.Println("1. Change name")
+		fmt.Println("2. Change description")
+		fmt.Println("2. Change price")
+		fmt.Println("3. Back")
+		_, err := fmt.Scan(&option)
+		if err != nil {
+			fmt.Println(err)
+		}
+		switch option {
+		case 1:
+			fmt.Scan(&l.Name)
+		case 2:
+			fmt.Scan(&l.Description)
+		case 3:
+			fmt.Scan(&l.Price)
+		case 4:
+			return
+		}
+	}
 }
 
 // FilterProducts filters products in json
